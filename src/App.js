@@ -38,9 +38,9 @@ function App() {
     // onReset();
     let resp = await deepai.callStandardApi("neural-style", {
       style: styleImg,
-      // content: contnetImg
+      content: contnetImg
       // style: "https://media.istockphoto.com/photos/orange-picture-id185284489",
-      content: "https://media.istockphoto.com/photos/assortment-of-colorful-ripe-tropical-fruits-top-view-picture-id995518546"
+      // content: "https://media.istockphoto.com/photos/assortment-of-colorful-ripe-tropical-fruits-top-view-picture-id995518546"
     });
     setFile(resp.output_url);
   }
