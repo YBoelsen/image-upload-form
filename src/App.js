@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="flex justify-center mt-8">
-      <div className="rounded-lg shadow-xl bg-gray-50 lg:w-1/2">
+      <div className="rounded-lg  lg:w-1/2">
         <div className="m-4">
           <p className="text-center p-2 text-4xl uppercase">Generate Magic Image</p>
           <div className='my-4 flex-col items-center justify-center	'>
@@ -62,12 +62,12 @@ function App() {
             <button className="px-4 py-2 text-white bg-green-500 rounded shadow-xl" onClick={onSubmit}>Submit</button>
             <button className="px-4 py-2 text-white bg-red-500 rounded shadow-xl" onClick={onReset}>Reset</button>
           </div>
-          <div className="flex-col items-center justify-center w-full h-96">
+          <div className="flex-col items-center justify-center w-auto h-96">
             {/* <input type="file" className="opacity-0" id="myfile" onChange={handleChange} /> */}
             <input type="file" id="myfile" name="myfile" onChange={handleChange} className="mb-2" />
             <label className="flex flex-col w-full border-4 border-dashed hover:bg-gray-100 hover:border-gray-300">
               <span className='uppercase text-lg text-center'>Content Type</span>
-              <img src={file} className = "h-80" width="100%" height="100%" id="contentImg" />
+              <img src={file} className = "" width="100%" id="contentImg" alt = ""/>
             </label>
           </div>
         </div>
