@@ -62,13 +62,23 @@ function App() {
             <button className="px-4 py-2 text-white bg-green-500 rounded shadow-xl" onClick={onSubmit}>Submit</button>
             <button className="px-4 py-2 text-white bg-red-500 rounded shadow-xl" onClick={onReset}>Reset</button>
           </div>
-          <div className="flex-col items-center justify-center w-auto h-96">
+          <div className="flex-col items-center justify-center h-96 ">
             {/* <input type="file" className="opacity-0" id="myfile" onChange={handleChange} /> */}
             <input type="file" id="myfile" name="myfile" onChange={handleChange} className="mb-2" />
-            <label className="flex flex-col w-full border-4 border-dashed hover:bg-gray-100 hover:border-gray-300">
-              <span className='uppercase text-lg text-center'>Content Type</span>
-              <img src={file} className = "" width="100%" id="contentImg" alt = ""/>
-            </label>
+            {/* <label className="flex flex-col w-auto p-3 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300"> */}
+            {/* <span className='uppercase text-lg text-center text-10xl'>Content Type</span> */}
+            <div className='flex justify-center border-grey border-4 p-10'>
+              {file ? <img src={file} className="h-96 w-3/4" width="" id="contentImg" alt="" /> : <svg xmlns="http://www.w3.org/2000/svg"
+                className="w-3/4 h-96 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                  clip-rule="evenodd" />
+              </svg>}
+            </div>
+
+            {/* </label> */}
+
           </div>
         </div>
       </div>
@@ -77,3 +87,4 @@ function App() {
 }
 
 export default App;
+
