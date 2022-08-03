@@ -27,6 +27,7 @@ function App() {
     //   console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
     setContentImg(URL.createObjectURL(e.target.files[0]));
+    console.log(contnetImg)
   }
   const styleImageChange = (ele) => {
     console.log(ele.target.value);
