@@ -9,13 +9,13 @@ const DIR_URL = "http://localhost:3000"; // Need to change this url path.
 // also you need to change ele1~ele7.jpgs in public/assets folder.
 
 const images = [
-  { "Name": "Element1", "URL": DIR_URL + "/assets/ele1.jpg" },
-  { "Name": "Element2", "URL": DIR_URL + "/assets/ele2.jpg" },
-  { "Name": "Element3", "URL": DIR_URL + "/assets/ele3.jpg" },
-  { "Name": "Element4", "URL": DIR_URL + "/assets/ele4.jpg" },
-  { "Name": "Element5", "URL": DIR_URL + "/assets/ele5.jpg" },
-  { "Name": "Element6", "URL": DIR_URL + "/assets/ele6.jpg" },
-  { "Name": "Element7", "URL": DIR_URL + "/assets/ele7.jpg" },
+  { "Name": "Element1", "URL": window.location.href + "/assets/ele1.jpg" },
+  { "Name": "Element2", "URL": window.location.href + "/assets/ele2.jpg" },
+  { "Name": "Element3", "URL": window.location.href + "/assets/ele3.jpg" },
+  { "Name": "Element4", "URL": window.location.href + "/assets/ele4.jpg" },
+  { "Name": "Element5", "URL": window.location.href + "/assets/ele5.jpg" },
+  { "Name": "Element6", "URL": window.location.href + "/assets/ele6.jpg" },
+  { "Name": "Element7", "URL": window.location.href + "/assets/ele7.jpg" },
 ];
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
     setContentImg(URL.createObjectURL(e.target.files[0]));
   }
   const styleImageChange = (ele) => {
+    console.log(ele.target.value);
     setStyleImg(ele.target.value);
   }
   const onSubmit = async () => {
