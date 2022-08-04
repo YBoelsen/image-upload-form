@@ -35,8 +35,10 @@ function App() {
   }
   const onSubmit = async () => {
     // alert(`style_image: ${styleImg} \n content_image: ${contnetImg}`);
-    alert("Submit Success!")
+    //alert("Submit Success!")
     // onReset();
+    const loader = document.querySelector('#loader')
+    loader.style.display = 'block'
     let resp = await deepai.callStandardApi("neural-style", {
       style: styleImg,
       
@@ -45,7 +47,9 @@ function App() {
       // content: "https://media.istockphoto.com/photos/assortment-of-colorful-ripe-tropical-fruits-top-view-picture-id995518546"
     });
     setFile(resp.output_url);
+    loader.style.display = 'none'
   }
+  
   const onReset = () => {
     setFile('');
   }
@@ -59,7 +63,7 @@ function App() {
           <p style={{paddingTop:12}} >Möchtest du lieber einen kostenlosen Vorabentwurf von unseren Designern? <a href="https://kikugallery.de/pages/kostenloser-test" id="testLink">Dann klicke bitte hier.</a></p>
           <div className='my-4 flex-col items-center justify-center	'>
             <label className="block mb-2 text-lg font-medium text-gray-900 dark:text-gray-400">Wähle dein Foto</label>
-            <input type="file" id="myfile" name="myfile" onChange={handleChange} className="mb-2" />
+            <input type="file" id="myfile" name="myfile" onChange={handleChange} className="mb-2" accept='image/*'/>
             <label className="block mb-2 text-lg font-medium text-gray-900 dark:text-gray-400">Wähle deinen Style</label>
             <select onChange={styleImageChange} defaultValue='' id="" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               <option value='' disabled>Wähle deinen Style...</option>
@@ -70,6 +74,7 @@ function App() {
             <button id="submit" className="px-4 py-2 text-white bg-green-500 rounded shadow-xl" onClick={onSubmit}>Zeige Vorschau!</button>
             <button id="reset" className="px-4 py-2 text-white bg-red-500 rounded shadow-xl" onClick={onReset}>Reset</button>
           </div>
+          <div id="loader" style={{display: 'none'}}>Lädt...</div>
           <div className="flex-col items-center justify-center h-48 lg:h-96 ">
             {/* <input type="file" className="opacity-0" id="myfile" onChange={handleChange} /> */}
             
