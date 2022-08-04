@@ -9,14 +9,14 @@ const DIR_URL = "http://localhost:3000"; // Need to change this url path.
 // also you need to change ele1~ele7.jpgs in public/assets folder.
 
 const images = [
-  { "Name": "Abstractish", "URL": window.location.href + "/assets/abstractish.jpg" },
-  { "Name": "Starry Night", "URL": window.location.href + "/assets/starrynight.jpg" },
-  { "Name": "Matisselike", "URL": window.location.href + "/assets/matisselike.jpg" },
-  { "Name": "Misty Moods", "URL": window.location.href + "/assets/mistymoods.jpg" },
-  { "Name": "Popart", "URL": window.location.href + "/assets/popart.jpg" },
-  { "Name": "Canal du Midi", "URL": window.location.href + "/assets/canaldumidi.jpg" },
-  { "Name": "Sunny vacation", "URL": window.location.href + "/assets/sunnyvacation.jpg" },
-  { "Name": "Selfportrait", "URL": window.location.href + "/assets/selfportrait.jpg" },
+  { "Name": "Abstractish", "URL": "https://cdn.shopify.com/s/files/1/0549/2110/1383/files/OMidk43gw2QS04jxfePU.jpg?v=1659547353" },
+  { "Name": "Starry Night", "URL": "https://cdn.shopify.com/s/files/1/0549/2110/1383/files/hNF5XNywdQcQCPOUC1Of.jpg?v=1659547353" },
+  { "Name": "Matisselike", "URL": "https://cdn.shopify.com/s/files/1/0549/2110/1383/files/H3QpyJnBclPidG2Opquz.png?v=1659547353" },
+  { "Name": "Misty Moods", "URL": "https://cdn.shopify.com/s/files/1/0549/2110/1383/files/DL46bVNDk6vaKnaxN2pJ.png?v=1659547353" },
+  { "Name": "Popart", "URL": "https://cdn.shopify.com/s/files/1/0549/2110/1383/files/6RO8KEwJ9Dfe1GwM4oVC.jpg?v=1659547353" },
+  { "Name": "Canal du Midi", "URL": "https://cdn.shopify.com/s/files/1/0549/2110/1383/files/SsCmIuFKa6XFjowyDchR.jpg?v=1659547353" },
+  { "Name": "Sunny vacation", "URL": "https://cdn.shopify.com/s/files/1/0549/2110/1383/files/vnqO5hDWWrKfqYYwowWh.jpg?v=1659547353" },
+  { "Name": "Selfportrait", "URL": "https://cdn.shopify.com/s/files/1/0549/2110/1383/files/8M91dfgcXMhpbiLjkWIX.jpg?v=1659547353" },
 ];
 
 function App() {
@@ -55,13 +55,14 @@ function App() {
       <div className="rounded-lg  lg:w-1/2">
         <div className="m-4">
           <p className="text-center p-2 text-2xl md:text-4xl uppercase">Erstelle deine Vorschau</p>
-          <p>Wir erstellen unsere Kunstwerke aus deinen Bildern mit einer Mischung aus digitalen Tools und menschlicher Kreativität. Dadurch schaffen wir schnelle, aber einzigartige Ergebnisse, da wir teilautomasiert arbeiten können, aber jedes Bild immer auch manuell anpassen und überarbeiten. <br></br> <strong>Wichtig!!! Die hier erstellte Vorschau soll nur einen ersten Eindruck vermitteln. Das reale Ergebnis wird anders aussehen und an deine Wünsche angepasst.</strong></p>
+          <p>Wir erstellen unsere Kunstwerke aus deinen Bildern mit einer Mischung aus digitalen Tools und menschlicher Kreativität. Dadurch schaffen wir schnelle, aber einzigartige Ergebnisse, da wir teilautomasiert arbeiten können, aber jedes Bild immer auch manuell anpassen und überarbeiten.<br></br> <br></br> <strong>!!!Das automatisierte Tool befindet sich in einer Beta und funktioniert bei einigen Styles besser als bei anderen. Z.B. Starry Night und Misty Moods werden von unseren Designern immer stark überarbeitet. Einen Einfluss haben hier auch Qualität und Farben des Bildes. Vergleichen Sie hierbei bitte das Ergebnis mit den Beispielbildern!!!</strong> <br></br> <br></br> <strong>!!! Die hier erstellte Vorschau soll nur einen ersten Eindruck vermitteln. Das reale Ergebnis wird anders aussehen und an deine Wünsche angepasst!!!</strong></p>
+          <p style={{paddingTop:12}} >Möchtest du lieber einen kostenlosen Vorabentwurf von unseren Designern? <a href="https://kikugallery.de/pages/kostenloser-test" id="testLink">Dann klicke bitte hier.</a></p>
           <div className='my-4 flex-col items-center justify-center	'>
             <label className="block mb-2 text-lg font-medium text-gray-900 dark:text-gray-400">Wähle dein Foto</label>
             <input type="file" id="myfile" name="myfile" onChange={handleChange} className="mb-2" />
             <label className="block mb-2 text-lg font-medium text-gray-900 dark:text-gray-400">Wähle deinen Style</label>
-            <select onChange={styleImageChange} id="" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option value='' disabled selected>Wähle deinen Style...</option>
+            <select onChange={styleImageChange} defaultValue='' id="" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option value='' disabled>Wähle deinen Style...</option>
               {images.map((ele, ind) => (<option key={ind} value={ele.URL}>{ele.Name}</option>))}
             </select>
           </div>
