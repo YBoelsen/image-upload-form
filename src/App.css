@@ -48,3 +48,7 @@
 #testLink {
   text-decoration: underline !important;
 }
+
+img {
+  pointer-events: none;
+}
